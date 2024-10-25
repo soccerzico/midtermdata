@@ -14,8 +14,12 @@ directoryPath="${baseDirectory}/${subDirectory}"
 echo "Processing category directory: $directoryPath"
 
 for subdir in "$directoryPath"/*; do
-[[ -d "$subdir" ]] continue
-echo "Processing sub directory: $subdir"
+[[ -d "$subdir" ]] || continue
+echo "Processing sub directory: $subdir
+done
+done
+
+
 
 
 
