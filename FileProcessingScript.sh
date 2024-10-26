@@ -3,6 +3,7 @@
 # Definition of base directory and subdirectory names as an array
 dataSubDirectories=("takeoff" "land" "left" "right" "forward" "backward")
 baseDirectory="/home/zakiadwan2003/midtermdata/data8"
+#replace base directory with applicable path
 
 # Loop through subdirectories
 for subDirectory in "${dataSubDirectories[@]}"; do
