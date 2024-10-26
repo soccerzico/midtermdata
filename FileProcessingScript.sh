@@ -16,7 +16,7 @@ for subDirectory in "${dataSubDirectories[@]}"; do
         [[ -d "$subdir" ]] || continue
         echo "Processing subdirectory: $subdir"
         counter=1
-        # Loop through each sub-subdirectory and rename the files 1-10 after shuffling them
+        # Loop through each sub-subdirectory and rename the files 1-n after shuffling them
         for file in $(find "$subdir" -type f | shuf); do
         newFileName="$subdir/$counter.txt"
         mv "$file" "$newFileName"
