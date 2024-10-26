@@ -16,7 +16,7 @@ for subDirectory in "${dataSubDirectories[@]}"; do
         [[ -d "$subdir" ]] || continue
         echo "Processing subdirectory: $subdir"
 
-        # Loop through each sub-subdirectory
+        # Loop through each file
         for file in "$subdir"/*; do
             # display each file
                echo "Processing file: $file"
