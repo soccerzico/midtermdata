@@ -2,7 +2,7 @@
 
 # Definition of base directory and subdirectory names as an array
 dataSubDirectories=("takeoff" "land" "left" "right" "forward" "backward")
-baseDirectory="/home/zakiadwan2003/midtermdata/data"
+baseDirectory="/home/zakiadwan2003/midtermdata/data2"
 
 # Loop through subdirectories
 for subDirectory in "${dataSubDirectories[@]}"; do
@@ -15,15 +15,15 @@ for subDirectory in "${dataSubDirectories[@]}"; do
     for subdir in "$directoryPath"/*; do
         [[ -d "$subdir" ]] || continue
         echo "Processing subdirectory: $subdir"
-
-        # Loop through each file
-        for file in "$subdir"/*; do
-            # display each file
-               echo "Processing file: $file"
+        counter=1
+        # Loop through each sub-subdirectory and rename the files 1-10 after shuffling them
+        for file in $(find "$subdir" -type f | shuf); do
+        newFileName="$subdir/$counter.txt"
+        mv "$file" "$newFileName"
+        ((counter++))
         done
     done
 done
-
 
 
 
