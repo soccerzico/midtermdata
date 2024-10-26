@@ -1,22 +1,27 @@
 #!/bin/bash
 
-#definition of base directory and subdirectory names as an array
+# Definition of base directory and subdirectory names as an array
 dataSubDirectories=("takeoff" "land" "left" "right" "forward" "backward")
 baseDirectory="/home/zakiadwan2003/midtermdata/data"
-#replace path with desired path
 
-#loop through sub directories
+# Loop through subdirectories
 for subDirectory in "${dataSubDirectories[@]}"; do
-directoryPath="${baseDirectory}/${subDirectory}"
-[[ -d "$directoryPath" ]] || continue
+    directoryPath="${baseDirectory}/${subDirectory}"
+    [[ -d "$directoryPath" ]] || continue
 
-#for clarity/debugging, to see each path
-echo "Processing category directory: $directoryPath"
+    echo "Processing category directory: $directoryPath"
 
-for subdir in "$directoryPath"/*; do
-[[ -d "$subdir" ]] || continue
-echo "Processing sub directory: $subdir
-done
+    # Loop through each subdirectory of the category
+    for subdir in "$directoryPath"/*; do
+        [[ -d "$subdir" ]] || continue
+        echo "Processing subdirectory: $subdir"
+
+        # Loop through each sub-subdirectory
+        for file in "$subdir"/*; do
+            # display each file
+               echo "Processing file: $file"
+        done
+    done
 done
 
 
